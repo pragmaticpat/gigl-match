@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import OptionButton from "../components/option-button";
 import Hint from "../components/hint";
-import { Accordion, HStack, VStack, Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Spacer } from "@chakra-ui/react";
 
 const Game = ({ serverData }) => {
   //see https://github.com/gatsbyjs/gatsby/issues/13355#issuecomment-483290533
@@ -11,35 +11,32 @@ const Game = ({ serverData }) => {
 
   return (
     <>
-      <Accordion>
-        <Text mt={4} mb={4}>
-          Image match: a toy app that uses Gatsby's runtime SSR to present
-          pictures and names of random animals. I created this to help my
-          daughter practice her "sight words."
-        </Text>
-      </Accordion>
-      <HStack spacing={8} alignItems="start" maxW="inherit">
-        <Box>
-          <Hint
-            imageUrl={serverData.photo.urls.regular}
-            photographerName={serverData.photo.user?.name}
-            photographerUserName={serverData.photo.user?.username}
-          />
-        </Box>
-        <Box minW={100}>
-          <VStack spacing={2}>
-            {serverData.options.map((option) => {
-              return (
-                <OptionButton
-                  name={option}
-                  key={option}
-                  answer={serverData.answer}
-                />
-              );
-            })}
-          </VStack>
-        </Box>
-      </HStack>
+      <Box>
+        <Hint
+          imageUrl={serverData.photo.urls.regular}
+          photographerName={serverData.photo.user?.name}
+          photographerUserName={serverData.photo.user?.username}
+        />
+      </Box>
+      <Flex
+        mt={10}
+        alignItems={"center"}
+        justifyContent={"space-evenly"}
+        wrap={"wrap"}
+        w={"70vh"}
+      >
+        {serverData.options.map((option) => {
+          return (
+            <>
+              <OptionButton
+                name={option}
+                key={option}
+                answer={serverData.answer}
+              />
+            </>
+          );
+        })}
+      </Flex>
     </>
   );
 };

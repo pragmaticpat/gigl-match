@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import "./hint.css";
 
 function Hint(props) {
   return (
@@ -24,7 +25,7 @@ function Hint(props) {
         </a>
       </p>
     </div>
-  )
+  );
 }
 
-export default Hint
+export default Hint;

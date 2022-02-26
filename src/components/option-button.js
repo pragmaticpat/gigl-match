@@ -1,14 +1,14 @@
-import React from "react"
-import { Button } from "@chakra-ui/react"
-import confetti from "canvas-confetti"
+import React from "react";
+import { Button } from "@chakra-ui/react";
+import confetti from "canvas-confetti";
 
 class OptionButton extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       optionName: props.name,
       answer: props.answer,
-    }
+    };
   }
 
   render() {
@@ -18,11 +18,10 @@ class OptionButton extends React.Component {
         onClick={() =>
           this.giveFeedback(this.state.optionName, this.state.answer)
         }
-        isFullWidth={true}
       >
         {this.state.optionName}
       </Button>
-    )
+    );
   }
 
   giveFeedback(option, answer) {
@@ -34,9 +33,9 @@ class OptionButton extends React.Component {
         gravity: 2,
         scalar: 0.8,
         ticks: 100,
-      }).then(() => window.location.reload())
+      }).then(() => window.location.reload());
     }
   }
 }
 
-export default OptionButton
+export default OptionButton;

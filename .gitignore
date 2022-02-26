@@ -1,0 +1,7 @@
+# node stuff
+node_modules
+
+# gatsby stuff
+.cache
+.env*
+public

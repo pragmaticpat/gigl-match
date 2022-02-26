@@ -1,0 +1,32 @@
+/* https://codepen.io/pragmaticpat/pen/GRMVNNL */
+.correct {
+  width: 2em;
+  height: 2em;
+  /*   background: #cccccc; */
+  align-items: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  margin-top: -1em;
+  left: 50%;
+  margin-left: -1em;
+
+  /*animation stuff*/
+  animation-name: zoom-in;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom-in {
+  from {
+    font-size: 1rem;
+  }
+  20% {
+    font-size: 10rem;
+  }
+  to {
+    opacity: 0%;
+    font-size: 10rem;
+  }
+}
